@@ -20,6 +20,8 @@ public class LoginController {
 
     @FXML
     private GridPane rootpane;
+
+    // This sets up the background image and the fade in effect
     public void initialize() {
         rootpane.setBackground(new Background(
                         createImage("https://edencoding.com/wp-content/uploads/2021/03/layer_06_1920x1080.png"),
@@ -38,6 +40,8 @@ public class LoginController {
         fadeOut2.setToValue(1);
         fadeOut2.play();
     }
+
+    // This loads and sets the background image
     private static BackgroundImage createImage(String url) {
         return new BackgroundImage(
                 new Image(url),
@@ -45,6 +49,8 @@ public class LoginController {
                 new BackgroundPosition(Side.LEFT, 0, true, Side.BOTTOM, 0, true),
                 new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, false, true));
     }
+
+    // This opens the main interface after login
     @FXML
     public void login(ActionEvent actionEvent) {
         try {
@@ -59,6 +65,7 @@ public class LoginController {
         }
     }
 
+    // This opens the sign-up screen
     public void signUp(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/signUp.fxml"));

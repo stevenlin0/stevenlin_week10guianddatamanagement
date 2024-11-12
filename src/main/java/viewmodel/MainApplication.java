@@ -16,12 +16,14 @@ public class MainApplication extends Application {
     private static DbConnectivityClass cnUtil;
     private Stage primaryStage;
 
+    // This starts the application
     public static void main(String[] args) {
         cnUtil = new DbConnectivityClass();
         launch(args);
 
     }
 
+    // This sets up the main window when the app starts
     public void start(Stage primaryStage) {
         Image icon = new Image(getClass().getResourceAsStream("/images/DollarClouddatabase.png"));
         this.primaryStage = primaryStage;
@@ -31,6 +33,7 @@ public class MainApplication extends Application {
         showScene1();
     }
 
+    // This shows the splash screen
     private void showScene1() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/splashscreen.fxml"));
@@ -44,6 +47,7 @@ public class MainApplication extends Application {
         }
     }
 
+    // This is to make the splash screen fade out and open the login screen
     public void changeScene() {
         try {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/view/login.fxml").toURI().toURL());
